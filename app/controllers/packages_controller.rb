@@ -11,11 +11,11 @@ class PackagesController < ApplicationController
   end
 
   def create
-    @package = Package.create!(params[:package])
+    @package = current_user.packages.create!(params[:package])
   end
 
   def search
-    @packages = current_user.packages.search {
+    @packages = Package.search {
       fulltext params[:q]
     }.hits.collect { |h| h.instance }
     respond_with(@packages)
