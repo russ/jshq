@@ -58,5 +58,16 @@ Jshq::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
   config.action_mailer.default_url_options = { :host => 'jshq.org' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => false,
+    :openssl_verify_mode => 'none',
+    :tls  => true
+  }
 end
