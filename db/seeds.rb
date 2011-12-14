@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Package.destroy_all
+
+user = User.create(
+  :email => "user@jshq.org",
+  :password => "password",
+  :password_confirmation => "password")
+user.confirm!
+
+10.times do
+  package = Package.create!(
+    :name => Faker::Internet.user_name,
+    :summary => Faker::Lorem.paragraph,
+    :descripton => Faker::Lorem.paragraph)
+
+  5.times do |i|
+    package.versions.create!(
+      :number => "0.0." + (i + 1).to_s,
+      :packaged_file => File.open(Rails.root.join("spec", "fixtures", "sample.tar.gz")))
+  end
+end
+
+Package.reindex

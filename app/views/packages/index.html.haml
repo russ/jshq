@@ -1,0 +1,10 @@
+%h1 JSHQ
+
+= form_tag(search_packages_path, :method => "get") do
+  = text_field_tag(:q)
+  = submit_tag("Search")
+
+%h2 Latest Plugins
+%ul
+  - @latest.each do |package|
+    %li= link_to(package.name, package_path(package))

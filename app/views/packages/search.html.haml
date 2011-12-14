@@ -1,0 +1,7 @@
+%h1== Results for "#{params[:q]}"
+
+- @packages.each do |package|
+  = link_to(package.name, package_path(package))
+
+- if @packages.count == 0
+  %p There were no results.

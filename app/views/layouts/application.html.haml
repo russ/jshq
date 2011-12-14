@@ -1,0 +1,19 @@
+!!!
+
+%html>
+%head>
+  %title JSHQ
+  = stylesheet_link_tag("application")
+  = javascript_include_tag("application")
+  = csrf_meta_tags
+
+%body
+  #navigation
+    = link_to("Home", root_path)
+    - if user_signed_in?
+      = link_to("Logout", destroy_user_session_path)
+      == (#{current_user.authentication_token})
+    - else
+      = link_to("Login", new_user_session_path)
+
+  = yield
