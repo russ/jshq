@@ -6,6 +6,6 @@ class PackageUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(tar.gz)
+    %w(tgz)
   end
 end

@@ -14,7 +14,13 @@ module V1
     end
 
     def create
-      @package = Package.create!(params[:package])
+      @package = Package.create(params[:package])
+      respond_with(@package)
+    end
+
+    def update
+      @package = Package.find_by_name(params[:id])
+      @package.update_attributes(params[:package])
       respond_with(@package)
     end
 

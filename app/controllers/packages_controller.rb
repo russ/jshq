@@ -10,10 +10,6 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
   end
 
-  def create
-    @package = current_user.packages.create!(params[:package])
-  end
-
   def search
     @packages = Package.search {
       fulltext params[:q]
