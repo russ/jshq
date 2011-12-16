@@ -16,6 +16,7 @@ gem 'fog'
 gem 'sunspot_rails'
 gem 'friendly_id', '~> 4.0.0.beta14'
 gem 'devise'
+gem 'whenever'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.5'

@@ -13,6 +13,9 @@ set :use_sudo, false
 set :ssh_options, { :forward_agent => true }
 ssh_options[:username] = "web"
 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 role :web, "jshq.org"
 role :app, "jshq.org"
 role :db,  "jshq.org", :primary => true
