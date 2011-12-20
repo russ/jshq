@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20111214210943) do
 
   create_table "packages", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.string   "slug"
     t.text     "summary"

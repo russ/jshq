@@ -1,0 +1,61 @@
+$black: #000000
+$white: #ffffff
+$gray:  #DBDBDB
+$blue: #395E87
+$drk-blue: #1D4168
+$lt-blue: #5487BF
+$red:   #5F060E
+$purple: #EAD4FF
+$orange: #F8B421
+$green: #34CE2F
+$yellow: #D8DF1E
+
+$flash_notice:  #1F880A
+$flash_warning: #CF9C1A
+$flash_error:   #B80000
+
+
+@mixin background-gradient($color1, $color2)
+  background: $color1
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2))
+  background: -webkit-linear-gradient(top, $color1 0%,$color2 100%)
+  background: -o-linear-gradient(top, $color1 0%,$color2 100%)
+  background: -ms-linear-gradient(top, $color1 0%,$color2 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=0 )
+  background: linear-gradient(top, $color1 0%,$color2 100%)
+  
+@mixin rounded-top-left($radius)
+  border-top-left-radius: $radius
+  -moz-border-top-left-radius: $radius
+  -webkit-border-top-left-radius: $radius
+
+@mixin rounded-top-right($radius)
+  border-top-right-radius: $radius
+  -moz-border-top-right-radius: $radius
+  -webkit-border-top-right-radius: $radius
+
+@mixin rounded-bottom-left($radius)
+  border-bottom-left-radius: $radius
+  -moz-border-bottom-left-radius: $radius
+  -webkit-border-bottom-left-radius: $radius
+
+@mixin rounded-bottom-right($radius)
+  border-bottom-right-radius: $radius
+  -moz-border-bottom-right-radius: $radius
+  -webkit-border-bottom-right-radius: $radius
+
+@mixin rounded($radius)
+  border-radius: $radius
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+
+@mixin box-shadow($x, $y, $spread, $color)
+  box-shadow: $x $y $spread $color
+  -webkit-box-shadow: $x $y $spread $color
+  -moz-box-shadow: $x $y $spread $color
+
+@mixin inner-shadow($x, $y, $spread, $color)
+  box-shadow: inset $x $y $spread $color
+  -moz-box-shadow: inset $x $y $spread $color
+  -webkit-box-shadow: inset $x $y $spread $color

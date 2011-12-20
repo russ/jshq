@@ -1,23 +1,34 @@
 !!!
 
-%html>
-%head>
+%html
+%head
   %title JSHQ
   = stylesheet_link_tag("application")
-  = javascript_include_tag("application")
   = csrf_meta_tags
 
 %body
-  #navigation
-    = link_to("Home", root_path)
-    - if user_signed_in?
-      = link_to("Logout", destroy_user_session_path)
-      == (#{current_user.authentication_token})
-    - else
-      = link_to("Register", new_user_registration_path)
-      = link_to("Login", new_user_session_path)
+  #wrap
+    #header.container
+      #logo
+        = link_to('JSHQ.org', root_path)
+        %h1 home for javascript plugins
+      #navigation
+        - if user_signed_in?
+          = link_to("Logout", destroy_user_session_path, :class => 'button')
+          == (#{current_user.authentication_token})
+        - else
+          = link_to("Register", new_user_registration_path, :class => 'button')
+          = link_to("Login", new_user_session_path, :class => 'button')
+    #search.container
+      %p Find the JavaScript plugin you're looking for!
+      = form_tag(search_packages_path, :method => "get") do
+        = text_field_tag(:q)
+        = submit_tag("Search Plugins", :class => 'button')
+  
+    #content.container
+      = yield
 
-  = yield
-
-  #footer
-    %p== JSHQ is a project from the #{link_to("Las Vegas Ruby Group", "http://www.meetup.com/las-vegas-ruby-on-rails/")}
+    #footer
+      %p JSHQ is a project from the #{link_to("Las Vegas Ruby Group", "http://www.meetup.com/las-vegas-ruby-on-rails/")}
+    
+  = javascript_include_tag("application")

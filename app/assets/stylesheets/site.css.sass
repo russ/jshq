@@ -1,0 +1,128 @@
+@import "helpers"
+* 
+  margin: 0
+  padding: 0
+
+body 
+  color: $white
+  font-family: Helvetica, Arial, sans-serif
+  font-size: 16px
+  background: $blue
+
+a 
+  text-decoration: none
+  color: $lt-blue
+  &:hover 
+    text-decoration: underline
+
+  &:focus, &:active 
+    outline: none
+
+img 
+  border: none
+
+ul, ol 
+  margin-left: 20px
+.button
+  display: inline-block
+  outline: none
+  cursor: pointer
+  text-align: center
+  text-decoration: none
+  font-size: 14px
+  padding: .5em 2em .55em
+  text-shadow: 0 1px 1px rgba(0,0,0,.3)
+  vertical-align: middle
+  @include rounded(.5em)
+  @include box-shadow(0, 1px, 2px, rgba(0,0,0,.2))
+  @include background-gradient($blue, darken($blue, 10%))
+  color: $gray
+  margin-top: 5px
+  &:hover
+    text-decoration: none
+    color: $white
+    @include background-gradient(lighten($blue, 10%), $blue)
+  &:active
+    position: relative
+    top: 1px
+    color: $white
+    @include background-gradient(lighten($green, 20%), $green)
+#wrap
+  @include inner-shadow(0, 0, 225px, $black)
+  .left
+    float: left
+  .right
+    float: right
+  .bigcol
+    width: 580px
+    margin-right: 20px
+  .smcol
+    width: 340px
+  .container
+    width: 980px
+    margin: 0 auto
+  #header
+    margin-bottom: 10px
+    padding: 10px 0
+    overflow: hidden
+    #logo
+      float: left
+      a
+        font-size: 20px
+        font-weight: bold
+        
+      h1
+        font-size: 16px
+        text-shadow: 1px 1px 0px $black
+    #navigation
+      float: right
+      
+  #search
+    clear: both
+    padding: 10px
+    text-align: center
+    margin-bottom: 10px
+    #q
+      @include rounded(8px)
+      border: 1px solid darken($white, 15%)
+      padding: 8px
+      width: 500px
+      @include inner-shadow(0, 0, 8px, $gray)
+      font-size: 16px
+      vertical-align: bottom
+      margin-right: 8px
+      &:hover, &:active
+        @include box-shadow(0, 0, 5px 3px, $green)
+    .button
+      vertical-align: middle
+
+  #content
+    min-height: 400px
+    h2
+      color: $green
+      font-size: 30px
+      text-shadow: 0 1px 0 $lt-blue, 0 -1px 0 $black
+      font-family: Armata, sans-serif
+      margin-bottom: 10px
+      border-bottom: 1px solid $gray
+      padding: 5px 0
+    h3
+      text-shadow: 1px 1px 0px $black
+      font-size: 20px
+      font-family: Armata, sans-serif
+      padding: 5px 0
+      margin-bottom: 5px
+  #footer
+    margin-top: 20px
+    padding-bottom: 50px
+    font-size: 10px
+    text-align: center
+    border-top: 1px solid $lt-blue
+    a
+      color: $white
+      text-decoration: underline
+    p
+      border-top: 1px solid $black
+      padding: 20px
+  
+  #something
