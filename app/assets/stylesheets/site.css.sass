@@ -47,6 +47,11 @@ ul, ol
     top: 1px
     color: $white
     @include background-gradient(lighten($green, 20%), $green)
+#github img
+  border: 0
+  position: absolute
+  right: 0
+  top: 0
 #wrap
   @include inner-shadow(0, 0, 225px, $black)
   .left
@@ -112,6 +117,17 @@ ul, ol
       font-family: Armata, sans-serif
       padding: 5px 0
       margin-bottom: 5px
+    ul.list
+      li
+        padding: 8px
+        border-top: 1px solid $gray
+        &:first-child
+          border-top: 0
+        a
+          
+        .downloads
+          font-size: 11px
+          float: right
   #footer
     margin-top: 20px
     padding-bottom: 50px
