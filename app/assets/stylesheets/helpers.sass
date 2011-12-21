@@ -14,7 +14,6 @@ $flash_notice:  #1F880A
 $flash_warning: #CF9C1A
 $flash_error:   #B80000
 
-
 @mixin background-gradient($color1, $color2)
   background: $color1
   background: -moz-linear-gradient(top, $color1 0%, $color2 100%)
@@ -27,35 +26,22 @@ $flash_error:   #B80000
   
 @mixin rounded-top-left($radius)
   border-top-left-radius: $radius
-  -moz-border-top-left-radius: $radius
-  -webkit-border-top-left-radius: $radius
 
 @mixin rounded-top-right($radius)
   border-top-right-radius: $radius
-  -moz-border-top-right-radius: $radius
-  -webkit-border-top-right-radius: $radius
 
 @mixin rounded-bottom-left($radius)
   border-bottom-left-radius: $radius
-  -moz-border-bottom-left-radius: $radius
-  -webkit-border-bottom-left-radius: $radius
 
 @mixin rounded-bottom-right($radius)
   border-bottom-right-radius: $radius
-  -moz-border-bottom-right-radius: $radius
-  -webkit-border-bottom-right-radius: $radius
 
 @mixin rounded($radius)
   border-radius: $radius
-  -webkit-border-radius: $radius
-  -moz-border-radius: $radius
 
 @mixin box-shadow($x, $y, $spread, $color)
   box-shadow: $x $y $spread $color
-  -webkit-box-shadow: $x $y $spread $color
-  -moz-box-shadow: $x $y $spread $color
 
 @mixin inner-shadow($x, $y, $spread, $color)
   box-shadow: inset $x $y $spread $color
-  -moz-box-shadow: inset $x $y $spread $color
-  -webkit-box-shadow: inset $x $y $spread $color
+  

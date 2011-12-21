@@ -19,3 +19,5 @@
 /public/packages/**/*
 /public/uploads/**/*
 /solr/data
+
+.rvmrc
