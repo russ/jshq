@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111214210943) do
+ActiveRecord::Schema.define(:version => 20111222030534) do
 
   create_table "packages", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20111214210943) do
     t.integer  "downloads",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "library"
   end
 
   add_index "packages", ["slug"], :name => "index_packages_on_slug", :unique => true
