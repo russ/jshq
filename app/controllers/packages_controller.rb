@@ -12,7 +12,7 @@ class PackagesController < ApplicationController
 
   def search
     @packages = Package.search {
-      fulltext params[:q]
+      fulltext "%#{params[:q]}%"
     }.hits.collect { |h| h.instance }
     respond_with(@packages)
   end

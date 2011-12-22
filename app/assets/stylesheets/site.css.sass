@@ -4,14 +4,14 @@
   padding: 0
   
 body 
-  color: $white
+  color: #eeeeee
   font-family: Helvetica, Arial, sans-serif
   font-size: 16px
   background: #333333
 
 a 
   text-decoration: none
-  color: $lt-blue
+  color: $white
   &:hover 
     text-decoration: underline
 
@@ -61,7 +61,7 @@ ul, ol
   background-color: $flash_notice
 .flash_warning
   background-color: $flash_warning
-.flash_error
+.flash_error, .flash_alert
   background-color: $flash_error
 #wrap
   background: $blue
@@ -85,8 +85,10 @@ ul, ol
     #logo
       float: left
       a
-        font-size: 20px
+        font-size: 30px
         font-weight: bold
+        small
+          font-size: 18px
         
       h1
         font-size: 16px
@@ -140,6 +142,7 @@ ul, ol
       padding: 5px 0
       margin-bottom: 5px
       height: 26px
+      color: $white
     ul.list
       margin: 0
       list-style: inside
