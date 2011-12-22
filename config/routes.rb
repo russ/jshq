@@ -23,5 +23,5 @@ Jshq::Application.routes.draw do
     end
   end
 
-  root :to => "packages#index"
+  root :to => "site#index"
 end

@@ -3,7 +3,7 @@ class PackagesController < ApplicationController
   before_filter :authenticate_user!, :only => [ :create ]
 
   def index
-    @latest = Package.latest.limit(5)
+    @packages = Package.all
   end
 
   def show

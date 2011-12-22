@@ -1,15 +1,9 @@
-.left.bigcol
-  %h2 Latest Plugins
+%h2 All Plugins
+
+#packages
   %ul.list
-    - @latest.each do |package|
+    - @packages.each do |package|
       %li
         .downloads #{package.downloads} downloads
         = link_to(package.name, package_path(package))
-.right.smcol
-  %h3 About JSHQ
-  %p JSHQ is a central location for JavaScript plugins of all types. The goal is to make it easier to find an up-to-date plugin using any type of library to fit your needs. We would like to see plugins conform to a standard that every JavaScript developer would use. This would include testing your scripts, and formatting them in a similar fashion allowing any other developer to help out with less time learning how you structured your plugin. This should also help alleviate those plugins that are old and outdated.
-  %br
-  %h3 JS Bootcamp
-  %p #{link_to('Bootcamp', 'http://github.com/jwoertink/bootcamp')} is a RubyGem that allows you to create, install, deploy, manage your JavaScript plugins. 
-
-%br{:clear => 'all'}
+        
